@@ -1,0 +1,69 @@
+
+
+-- DRUMS
+d1 $ every 8 (fast 2) $ s "[bd, cp(3, 8), hh*<8!2 6 16>]"  # room 0.01 # distort 0.05
+
+
+d1 $ stut 1 0.2 (1/16) $ every 4 (fast 2) $ "bd [<~ 808:2> 808] [<~ cp> . <tabla ~ > tabla:10 . cp] <tabla ~ >"
+
+d1 $ stut 2 0.2 (1/8) $ s "bd cp bd cp" # hpf 40 
+
+d1 $ "[cp(3,8,1), bd(2,4)]"
+
+d1 $ s "[bd(3, 8), ~ <cp cp*2>, hh:13*<1 2 3>(3,8,4)]" # distort 0.1 # room 0.1
+
+d1 $ s "bd!4" # distort (slow 4 (range 0 0.15 sine))
+
+d1 silence
+
+d2 $ every 4 (jux (hurry 2)) $ n (scale "minor" "0 1 <2!2 ~ 6> [~ 5]") # s "supermandolin" 
+# room 0.2 # amp 0.2
+
+d2 silence
+
+d5 $ striateBy 16 0.5 $ s "[numbers]" # up 0
+
+d6 $ trunc 0.5 $ slow 8 $ striate' 16 (1/8) $ s "bev"
+
+d2 silence
+
+d3 $ every 4 (  fast 2) $ n (scale "minor" "<0 5 3> _ ~ [~ 8]" ) # s "superfm"  
+    # release 1 # distort 0.1 # voice 1 # hpf 200
+
+
+
+-- SYNTH
+d3 $ stut 2 0.3 (1/8) $
+degradeBy 0.2 $ every 8 (jux (rev)) $ every 4 (hurry 2) $ n (scale "minor" "0 [ 5 6 2]" |+ 12) 
+    # s "supersaw" 
+    # amp 0.06 # release 0.4 
+    # leslie 1
+
+d3 $ fast 2 $ n (scale "minor" "<[0 6 5] [<8 4> 6 <5 [3 5]>] >") # s "supersaw" # amp 0.2
+
+
+d3 silence
+
+-- BASS
+d4 $ every 4 (slow 2) $ n (scale "minor" "[0 _ <0 [5 [5 5]]> [8 5 3 1]]" |- 24) # s "supersaw" # amp 0.08
+    # voice 0.2
+    # distort (slow 8 $ (range 0.2 0.8 sine))
+
+d4 $ n (scale "minor" "[0!4 5!4 4!4 1!4]/4" |- 24) # s "supersaw"
+    # voice (slow 8 $ (range 0.1 0.5 sine))
+    # amp 0.2
+    # distort 0.2
+
+d4 $ n (scale "minor" "[<0 5> <~ [~ 8 6]>]" |- 24) # s "superfm" # release 2 # squiz (slow 8 $ range 0.5 1 sine) # gain 0.8 # hpf 45
+
+d4 silence
+
+
+
+
+
+d1 $ stack [
+    s "[bd cp , hh*<8 4 16>]",
+    n "0 1 2" # s "supermandolin",
+    n ("<0 6 5 [2 3]>@2 ~ ~ " |- 12) # gain 0.8 # attack 0.1 # release 1 # accelerate 2 # s "superfm" # leslie 1.5 
+] # lpf (slow 8 $ range 400 20000 sine)

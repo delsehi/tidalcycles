@@ -1,0 +1,36 @@
+
+
+-- KICK
+d1 $ every' 8 1 (fast 2) $ s "future:1(3,8)"  # gain 2
+
+-- CLAPS
+d3 $ s "~ cp:1" # gain 2 # room 0.05 # sz 0.7
+
+-- HATS
+
+d6  $ s "hh*<4 4 4 8>" # gain 1.5
+
+-- NOISE FILL
+d4 $ echo 1 0.5 0.5 $ s "[~ ~ ~ hh:5*<32 8 16>]/4" 
+    # distort (range 0 1 sine)
+    # leslie (fast 2 $ range 0 5 sine)
+    # hpf 200
+    # gain 0.75
+
+-- PIP
+d5 $ echo 4 0.5 0.5 $ slow 2 $ n (scale "minor" "0 0 0*4 0") # s "supersaw" 
+    # gain 0.4 # release 0.2 # hpf 500 # octave "<7 8>"
+    # leslie 5
+
+-- JOBBIG SYNTH
+d7 $ every 8 (jux rev) $ n (scale "minor" "0 5*2 <[8 7] [9 5 2]> ~ <5 8> ~ ") # s "superfm" # release 1 # leslie 3 # gain 0.7
+    # distort 0.2
+    # lpf 250
+    # silence
+
+-- BASS
+d2 $ every 8 palindrome $ n (scale "minor" "<0 0 3 2>(3, 8, 2)") # s "superfm" 
+    # octave 3 # distort 0.1 # release 1
+
+
+
