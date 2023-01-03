@@ -13,7 +13,7 @@ d1 $ stack [
          # lpf (slow 2 $ range 1000 2000 sine) 
          # squiz (slow 2 $ range 1 2 sine) # hpf 400 # silence,
     -- BASS
-     $ n "<[0 _] [3 _] <0 3 2>>" # s "superfm" 
+    n "[0(3, 8, 1)]" # s "superfm" 
         # octave 3 # distort 0 # gain 1.15 # attack 0.1 # release 1,
     -- BIRDS
     off 0.125 (# speed 2) $ chunk 2 (hurry 2) $ loopAt 5 $ s "birds:4" # hpf 400 # silence
