@@ -1,21 +1,15 @@
 
 setcps (135/60/4)
 
-d1 $ stack [
-    -- DRUMS
-    sometimes (fast 2) $ s "[[drum(3,8,<0 0 2>)], [~ ab:11]]" 
-         # gain 1.2,
-    -- HATS
-    degradeBy 0.2 $ s "808:1*16" # gain (range 0.7 1.2 rand) 
-        # room 0.05,
-    -- BIRDS
-    every 4 (jux (rev)) $ chunk 4 (# speed "-1") $ s "birds"
-         # lpf (slow 2 $ range 1000 2000 sine) 
-         # squiz (slow 2 $ range 1 2 sine) # hpf 400,
-    -- BASS
-    n "[<0 0 3 2>(3, 8, 1)]" # s "superfm" 
-        # octave 3 # distort 0 # gain 1.15 # attack 0.1 # release 1
-        # squiz (slow 6 $ range 0.2 1.3 tri),
-    -- BIRDS
-    off 0.125 (# speed 2) $ chunk 2 (hurry 2) $ loopAt 5 $ s "birds:4" # hpf 400
-] -- # squiz (slow 6 $ range 0.2 2.0 sine) # lpf (slow 10 $ range 300 3000 sine)
+d2 $ whenmod 8 6 (# silence) $ every 4 (jux (chop "64")) $ chop "<16 32>" $ slow 2 $ s "bev" 
+    # grain 0.7 0.1 # legato 1 # speed "-0.5" # hpf 200 # room 0.1 
+
+d5 $ echo 4 0.2 0.5 $ whenmod 4 1 (# silence) $ s "~ ~ cp*16" 
+    # gain (slow 2 $ rev $ range 0.3 2 sine)
+
+d1 $ every 8 (fast 2) $ "[bd(3,8), ~ cp]"
+
+d3 $ every 8 ( slow 4) $ s "hh*16" # gain (slow 4 $ range 0.8 1.2 rand)
+
+d4 $ n (scale "minor" "<[0 _ ~ 5*3]!3 0*6>") # s "superfm"
+     # octave 3 # distort (slow 8 $ range 0.05 0.1 tri) # gain 0.8
