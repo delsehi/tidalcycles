@@ -10,6 +10,7 @@ d5 $ echo 4 0.2 0.5 $ whenmod 4 1 (# silence) $ s "~ ~ cp*16"
 d1 $ every 8 (fast 2) $ "[bd(3,8), ~ cp]"
 
 d3 $ every 8 ( slow 4) $ s "hh*16" # gain (slow 4 $ range 0.8 1.2 rand)
+    # pan (slow 8 $ range 0.3 07 sine)
 
 d4 $ n (scale "minor" "<[0 _ ~ 5*3]!3 0*6>") # s "superfm"
      # octave 3 # distort (slow 8 $ range 0.05 0.1 tri) # gain 0.8
