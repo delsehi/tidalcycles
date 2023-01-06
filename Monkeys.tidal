@@ -1,0 +1,23 @@
+
+
+d1 $ "bd*4" # squiz (slow 8 (range 0.5 2 sine) )
+
+d1 $ "[bd(3,8), hh*<8 16 6 8>, ~ cp]" # squiz (slow 4 (range 1 1.3 sine))
+
+d1 silence
+
+d2 $ 
+every 4 (jux ( rev)) $ every 8 (fast 2) $ n (scale "minor" "0 <0 5 <[6 5] [ 5 3]>>") # s "superpiano" # room 0.2 # sz 0.4 # gain 0.7
+
+d2 silence 
+
+d3 $ "~ cp"
+
+d3 silence
+
+d4 $ s "numbers _ _ _"  # n "<1 2 3 ~ >" # squiz 1 # leslie 0.6
+
+
+d5 $ every 4 (hurry 2) $ n (scale "minor" "0@3 <[6 5] 3>" |- 24) # s "supersaw" # gain 0.6 # squiz (slow 8 (range 1 4 sine))
+
+d5 silence

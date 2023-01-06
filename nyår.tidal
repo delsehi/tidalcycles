@@ -5,6 +5,6 @@ d1 $ stack[
    -- ,whenmod 3 4 (fast 2) $ every 4 (jux (rev)) $ n "0 5 3 [5 2]" # s "arpy" # room 0.05
     , s "hh*<8 2 4 3>"
     , slow 4 $ n (scale "minor" "[0 0 6 [8 3]]") # s "superfm" # octave 2 # krush 2
-    -- , echo 4 0.2 0.5 $ slow 4 $ n "0 3 2 1" # s "arpy"
-    -- ,  $ every' 4 0 (rev) $ fast 2 $ s "arpy:1 arpy:0 arpy:3 arpy:4"
+     , echo 4 0.2 0.5 $ slow 4 $ n "0 3 2 1" # s "arpy"
+    ,  $ every' 4 0 (rev) $ fast 2 $ s "arpy:1 arpy:0 arpy:3 arpy:4"
 ]

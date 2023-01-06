@@ -1,0 +1,24 @@
+
+
+
+d1 $ n (scale "minor" "0 0 1 1") # s "superpiano"
+
+d2  $ stut 9 0.2 (1/8) $ s "numbers" # n "<1 2 3>" # squiz (slow 8 $ (range 0 2 sine)) # pan 0.3
+
+d2 silence
+
+d1 $ s "bd*4" # squiz (slow 4 $ (range 1 2 sine))
+
+d3 $ s "~ cp" # squiz 1.4 # room 0.2
+
+d3 $ every 8 (fast 2) $ s "cp(3,8,2)" # squiz 1.2 # room 0.1 # sz 0.8
+
+d4 $ n (scale "minor" "<0 6 5 1>*<2 3 2 1>" |- 24) # s "supersaw" # gain 0.7 # squiz 1.2
+
+d4 $ n (scale "minor" "0" |-24 ) # "supersquare" # gain 0.7  # release 2
+
+d5 $ slow 2 $ n (scale "minor" "6 4 <1 [9 8 6 ]>? <0 5>") # s "superpiano" # leslie 0.3 # gain 0.8 # pan 0.7
+
+
+
+d6 $ repeatCycles 16 $ n (scale "minor" $ struct "t(3,8)" $ irand 8) # s "superpiano"

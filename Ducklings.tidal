@@ -1,0 +1,19 @@
+
+
+d1 $ stack [
+    s "bd(3,8)" # n 6,
+    s "~ <808 [808*2 ~]> " # n 3,
+    s "hh(7, 16, 2)" # n "0 0 1 <4 6>" # pan (slow 4 $ range 0.2 0.8 sine) # silence
+] 
+
+d2 $ stut (slow 8 $ "2 3 4 2") 0.4 (1/8) $ n (scale "minPent" "[~ <0!3 -1>]*2") # s "superpiano" 
+    # squiz (slow 4 $ range 2 4 sine) # vowel "e o" # gain 0.7
+    # hpf 50
+
+d2 silence
+
+d3 $ n (scale "minPent" "0 _ ~ <2 3 2 [5 4]> ~" |- 24) # s "superfm" 
+    # release 1.5 # gain 0.8 # distort 0.04
+    # hpf 50
+
+    

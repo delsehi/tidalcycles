@@ -1,0 +1,9 @@
+
+
+d3 $ n "<c f>'minor7" # s "superhammond" # lpf 300 # hpf 100 # gain 0.6 # leslie (slow 8 $ smooth "2 4")
+
+d2 $ fast 2 $ s "[bd(3,8), ~ cp, hh*<4>]" # n (irand 10)
+
+
+d5 $ slow 2 $ n "0 0 0*3 0" # s "superfm" # octave 3 # gain 0.9 # krush 0.5
+
