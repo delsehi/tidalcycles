@@ -1,0 +1,18 @@
+
+
+d1 $ s "[future:1*<1 1 1 2> 808sd:8]" # gain 2
+
+d7 $ s "~ ~ 808sd:3*2"
+
+d5 $ degradeBy "0.2 0.4 0.5 0.3" $ s "hh*16" # pan (slow 4 $ smooth "0.2 0.8") # gain (range 0.8 1.2 rand) # room 0.5 # gain 0.9
+
+d2 $ n "0@3 ~" # s "superfm" # octave 3 # gain 0.8
+
+d3 $ n "[c'maj7 c'min7]/4 ~" # s "superfm" # gain 0.7 # release 1.2 # hpf 100
+
+d4 $ slow 4 $ n (arpeggiate "c'maj7*2 c'min7*2") # s "supermandolin" # room 0.5 # squiz 0.5 # hpf 2000
+
+d6 $ off 0.125 (fast 2 . rev) $ slow 4 $ every "2 4" (chunk 4 (# speed "-1")) $ n "1 2 3 4" # s "numbers" 
+    # room 0.3 # pan "0.3 0.7" # squiz (slow 4 $ smooth "0.3 1.2") 
+
+d8 $ fast 2 $  n "~ 0 " # s "bleep" # gain 0.8 # voice 1 # hpf 700 # lpf 2000 # release 1
