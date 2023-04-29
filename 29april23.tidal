@@ -1,0 +1,15 @@
+
+d1  $ brak $ s "[bd(3,8), ~ cp, hh*8]"
+
+d2 $ brak $ arp "pinkyup" $ n "<c'minor'4!3 cs'minor7>"
+  # s "supersaw" # octave 2 # gain 0.8 # djf 0.22
+
+d3 $ superimpose (slow 2) $ brak $ arp "up" $ n "c'minor gs'minor" # s "superpiano" # gain 0.5
+
+d3 $ slow 2 $ loopAt 4 $ chop 32 $ n "0 5 0 [3 4]" # s "bev" # gain 0.7 # speed (-2)
+
+d3 $ brak $ ply "<1 8 [2 16 1 24] 3>" $ arp "up" $ n "<c'minor'4!3 cs'minor7>"
+  # s "superpiano" # gain 0.6 # room 0.1 # sz 0.8
+
+d4 $ bite 8 "[0 0 [2 1] 6, ~ 7 3]" $ chunk 4 (# octave 3) $ slowstripe 8 $ arp "updown" $ n "c'minor" # s "superpiano" # gain 0.7
+

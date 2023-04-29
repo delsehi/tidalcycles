@@ -1,0 +1,28 @@
+-- 5/4 thing
+d1 $ every 3 (rev . fast 2) $ n (scale "chromatic" "0 0 3 5 2" |- 24)
+  # s "supersaw" # gain 0.5 # krush (slow 8 $ range 3 8 sine)
+
+d2 $ s "bd(3,5)"
+
+d3 $ s "~ cp ~ ~ ~"
+
+d4 $ slow 2 $ n "c'minor" # s "supersaw" # gain 0.3 # leslie 8 # release 4
+
+d5 $ "hh!3 hh*2 ho" # room 0.1 # gain 0.8
+
+-- Weird techno?
+
+d1 $ rarely (jux rev) $ fast 2 $  n "<0 6 4 3>(3,8)"
+    # s "supermandolin" # room 0.2 # leslie 0 # phasr (slow 4 $ range 1 20 sine)
+      # phasdp (slow 8  $ range 1 20 sine) # vowel "a e i u u ~" # shape 0.2
+      # coarse 3 # djf (slow 16 $ range 0.2 0.8 sine)
+
+d2 $ s "bd*4" # squiz (slow 8 $ range 0.1 1 sine)
+
+d3 $ n ("<0!3 ~>(3, 8)") # s "sine" # octave 2 # squiz 1.5 # gain 1 # release 0.5
+
+d4 $ fast 2 $ "~ cp*<1 1 1 4>" # room 0.2 # gain 0.95
+
+d5 $ "~ ~ hh*4 ho" # room "0.4 0.1" # gain 0.8
+
+d6 $ every 4 (jux rev) $ chop "4 8" $ "~ h" # room 0.1 # djf "[0.1 0.5]/8"
